@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inisialisasi postgresql elephantsql &#8212; Isnain Fauziah 200411100007</title>
+    <title>Pipelines &#8212; Isnain Fauziah 200411100007</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Text Processing" href="UTS_PSD.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="scrapping_pta.html" />
+    <link rel="prev" title="Crawling PTA" href="scrapping_pta.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,22 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas Proyek Sains Data</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inisialisasi postgresql elephantsql</a></li>
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="crawling_1.html">Crawl Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_2.html">Crawling Berita Online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_pta.html">Crawling PTA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pipelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS_PSD.html">Text Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networkx.html">Importing libraries</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="networkx.html">Pagerank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topik_modelling.html">Topik Modelling</a></li>
 </ul>
 
     </div>
@@ -387,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Inisialisasi postgresql elephantsql</h1>
+    <h1>Pipelines</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,17 +388,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Inisialisasi postgresql elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inisialisasi-postgresql-elephantsql">Inisialisasi postgresql elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -418,7 +408,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>!pip install pandoc</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pipelines">
+<h1>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this heading">#</a></h1>
+<p>!pip install pandoc</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2-binary
@@ -427,21 +419,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
-  Downloading psycopg2_binary-2.9.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.3/3.0 MB</span> <span class=" -Color -Color-Red">40.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">42.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">28.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: psycopg2-binary
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed psycopg2-binary-2.9.6
+Requirement already satisfied: psycopg2-binary in /usr/local/lib/python3.10/dist-packages (2.9.6)
 </pre></div>
 </div>
 </div>
@@ -454,7 +432,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="inisialisasi-postgresql-elephantsql">
-<h1>Inisialisasi postgresql elephantsql<a class="headerlink" href="#inisialisasi-postgresql-elephantsql" title="Permalink to this heading">#</a></h1>
+<h2>Inisialisasi postgresql elephantsql<a class="headerlink" href="#inisialisasi-postgresql-elephantsql" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -482,7 +460,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="koneksi-postgresql-elephantsql">
-<h1>Koneksi postgresql elephantsql<a class="headerlink" href="#koneksi-postgresql-elephantsql" title="Permalink to this heading">#</a></h1>
+<h2>Koneksi postgresql elephantsql<a class="headerlink" href="#koneksi-postgresql-elephantsql" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace with your own database URL and credentials</span>
@@ -657,7 +635,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="koneksi-postgresql-local">
-<h1>Koneksi postgresql local<a class="headerlink" href="#koneksi-postgresql-local" title="Permalink to this heading">#</a></h1>
+<h2>Koneksi postgresql local<a class="headerlink" href="#koneksi-postgresql-local" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
@@ -733,7 +711,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="section" id="koneksi-mysql-local">
-<h1>Koneksi mysql local<a class="headerlink" href="#koneksi-mysql-local" title="Permalink to this heading">#</a></h1>
+<h2>Koneksi mysql local<a class="headerlink" href="#koneksi-mysql-local" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mysql.connector</span>
@@ -911,7 +889,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="section" id="koneksi-microsoft-sql-server-local">
-<h1>Koneksi Microsoft SQL Server local<a class="headerlink" href="#koneksi-microsoft-sql-server-local" title="Permalink to this heading">#</a></h1>
+<h2>Koneksi Microsoft SQL Server local<a class="headerlink" href="#koneksi-microsoft-sql-server-local" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span> 
@@ -1111,7 +1089,7 @@ Requirement already satisfied: greenlet!=0.4.17 in d:\anaconda3\lib\site-package
 </div>
 </div>
 <div class="section" id="tabel-a">
-<h1>Tabel A<a class="headerlink" href="#tabel-a" title="Permalink to this heading">#</a></h1>
+<h2>Tabel A<a class="headerlink" href="#tabel-a" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_elephantsql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
@@ -1180,7 +1158,7 @@ Requirement already satisfied: greenlet!=0.4.17 in d:\anaconda3\lib\site-package
 </div>
 </div>
 <div class="section" id="tabel-b">
-<h1>Tabel B<a class="headerlink" href="#tabel-b" title="Permalink to this heading">#</a></h1>
+<h2>Tabel B<a class="headerlink" href="#tabel-b" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_elephantsql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
@@ -1249,7 +1227,7 @@ Requirement already satisfied: greenlet!=0.4.17 in d:\anaconda3\lib\site-package
 </div>
 </div>
 <div class="section" id="tabel-c">
-<h1>Tabel C<a class="headerlink" href="#tabel-c" title="Permalink to this heading">#</a></h1>
+<h2>Tabel C<a class="headerlink" href="#tabel-c" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_mysql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
@@ -1318,7 +1296,7 @@ Requirement already satisfied: greenlet!=0.4.17 in d:\anaconda3\lib\site-package
 </div>
 </div>
 <div class="section" id="tabel-d">
-<h1>Tabel D<a class="headerlink" href="#tabel-d" title="Permalink to this heading">#</a></h1>
+<h2>Tabel D<a class="headerlink" href="#tabel-d" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_mysql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
@@ -1422,6 +1400,7 @@ Successfully installed pandoc-2.3 plumbum-1.8.1 ply-3.11
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1460,7 +1439,7 @@ Successfully installed pandoc-2.3 plumbum-1.8.1 ply-3.11
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Crawling PTA</p>
       </div>
     </a>
     <a class="right-next"
@@ -1490,17 +1469,16 @@ Successfully installed pandoc-2.3 plumbum-1.8.1 ply-3.11
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Inisialisasi postgresql elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inisialisasi-postgresql-elephantsql">Inisialisasi postgresql elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

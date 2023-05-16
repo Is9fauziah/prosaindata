@@ -63,8 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'UTS_PSD';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Importing libraries" href="networkx.html" />
-    <link rel="prev" title="Inisialisasi postgresql elephantsql" href="Tugas2_Pipelines.html" />
+    <link rel="next" title="Pagerank" href="networkx.html" />
+    <link rel="prev" title="Pipelines" href="Tugas2_Pipelines.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,22 +157,13 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas Proyek Sains Data</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Tugas2_Pipelines.html">Inisialisasi postgresql elephantsql</a></li>
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="crawling_1.html">Crawl Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_2.html">Crawling Berita Online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_pta.html">Crawling PTA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas2_Pipelines.html">Pipelines</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Text Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networkx.html">Importing libraries</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="networkx.html">Pagerank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topik_modelling.html">Topik Modelling</a></li>
 </ul>
 
     </div>
@@ -399,7 +390,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>##Preprosesing</p>
+  <p>#UTS</p>
+<p>##Preprosesing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># install modul</span>
@@ -410,17 +402,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting Sastrawi
-  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">16.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed Sastrawi-1.0.1
+Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
@@ -453,7 +435,7 @@ Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
-[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data]   Package punkt is already up-to-date!
 </pre></div>
 </div>
 </div>
@@ -949,7 +931,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Inisialisasi postgresql elephantsql</p>
+        <p class="prev-next-title">Pipelines</p>
       </div>
     </a>
     <a class="right-next"
@@ -957,7 +939,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Importing libraries</p>
+        <p class="prev-next-title">Pagerank</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

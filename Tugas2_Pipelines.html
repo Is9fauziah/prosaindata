@@ -1,0 +1,1556 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inisialisasi postgresql elephantsql &#8212; Isnain Fauziah 200411100007</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas2_Pipelines';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Text Processing" href="UTS_PSD.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="scrapping_pta.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas Proyek Sains Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inisialisasi postgresql elephantsql</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="UTS_PSD.html">Text Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networkx.html">Importing libraries</a></li>
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Is9fauziah/prosaindata/blob/gh-pages/_sources/Tugas2_Pipelines.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Is9fauziah/prosaindata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Is9fauziah/prosaindata/issues/new?title=Issue%20on%20page%20%2FTugas2_Pipelines.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Tugas2_Pipelines.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Inisialisasi postgresql elephantsql</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Inisialisasi postgresql elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>!pip install pandoc</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2-binary
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
+  Downloading psycopg2_binary-2.9.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.3/3.0 MB</span> <span class=" -Color -Color-Red">40.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">42.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.0/3.0 MB</span> <span class=" -Color -Color-Red">28.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: psycopg2-binary
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed psycopg2-binary-2.9.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inisialisasi-postgresql-elephantsql">
+<h1>Inisialisasi postgresql elephantsql<a class="headerlink" href="#inisialisasi-postgresql-elephantsql" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.parse</span> <span class="k">as</span> <span class="nn">up</span>
+<span class="kn">import</span> <span class="nn">psycopg2</span>
+
+<span class="o">%</span><span class="k">env</span> DATABASE_URL=postgres://htaeovkk:dBR1FBnoLd495wPx260Q_8xQNYXHMZif@floppy.db.elephantsql.com/htaeovkk
+
+<span class="n">up</span><span class="o">.</span><span class="n">uses_netloc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;postgres&quot;</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">up</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;DATABASE_URL&#39;</span><span class="p">])</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+<span class="n">user</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+<span class="n">password</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">password</span><span class="p">,</span>
+<span class="n">host</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span>
+<span class="n">port</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">port</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>env: DATABASE_URL=postgres://htaeovkk:dBR1FBnoLd495wPx260Q_8xQNYXHMZif@floppy.db.elephantsql.com/htaeovkk
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="koneksi-postgresql-elephantsql">
+<h1>Koneksi postgresql elephantsql<a class="headerlink" href="#koneksi-postgresql-elephantsql" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace with your own database URL and credentials</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;postgres://htaeovkk:dBR1FBnoLd495wPx260Q_8xQNYXHMZif@floppy.db.elephantsql.com/htaeovkk&quot;</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT sepalwidthcm FROM iris&quot;</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Decimal(&#39;0.00&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.60&#39;),)
+(Decimal(&#39;3.90&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.70&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;4.40&#39;),)
+(Decimal(&#39;3.90&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.70&#39;),)
+(Decimal(&#39;3.60&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;4.10&#39;),)
+(Decimal(&#39;4.20&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;2.30&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.70&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;2.30&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;2.40&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;2.00&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.20&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;2.20&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.60&#39;),)
+(Decimal(&#39;2.40&#39;),)
+(Decimal(&#39;2.40&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;2.30&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;2.60&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.60&#39;),)
+(Decimal(&#39;2.30&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;2.90&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;3.60&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;2.60&#39;),)
+(Decimal(&#39;2.20&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.80&#39;),)
+(Decimal(&#39;2.60&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;3.10&#39;),)
+(Decimal(&#39;2.70&#39;),)
+(Decimal(&#39;3.20&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;2.50&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;3.40&#39;),)
+(Decimal(&#39;3.00&#39;),)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="koneksi-postgresql-local">
+<h1>Koneksi postgresql local<a class="headerlink" href="#koneksi-postgresql-local" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">dbname</span><span class="o">=</span><span class="s2">&quot;prosain20041110007&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;2020&quot;</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Create a cursor object</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Execute a SQL query</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT sepallengthcm FROM iris;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fetch the results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="c1"># Print the results</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="c1"># Close the cursor and connection objects when you&#39;re done</span>
+<span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">OperationalError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-5-c22ac8d2d9c6&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">dbname</span><span class="o">=</span><span class="s2">&quot;prosain20041110007&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">user</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">password</span><span class="o">=</span><span class="s2">&quot;2020&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> 
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">conn</span><span class="o">.</span><span class="n">cursor_factory</span> <span class="o">=</span> <span class="n">cursor_factory</span>
+
+<span class="ne">OperationalError</span>: connection to server at &quot;localhost&quot; (127.0.0.1), port 5432 failed: Connection refused
+	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">that</span> <span class="n">host</span> <span class="ow">and</span> <span class="n">accepting</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> connections<span class="o">?</span>
+<span class="n">connection</span> <span class="n">to</span> <span class="n">server</span> <span class="n">at</span> <span class="s2">&quot;localhost&quot;</span> <span class="p">(::</span><span class="mi">1</span><span class="p">),</span> <span class="n">port</span> <span class="mi">5432</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Cannot</span> <span class="n">assign</span> <span class="n">requested</span> <span class="n">address</span>
+	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">that</span> <span class="n">host</span> <span class="ow">and</span> <span class="n">accepting</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> connections<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">mysql</span><span class="o">-</span><span class="n">connector</span><span class="o">-</span><span class="n">python</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting mysql-connector-python
+  Downloading mysql_connector_python-8.0.32-cp39-cp39-win_amd64.whl (7.9 MB)
+     ---------------------------------------- 7.9/7.9 MB 1.5 MB/s eta 0:00:00
+Collecting protobuf&lt;=3.20.3,&gt;=3.11.0
+  Downloading protobuf-3.20.3-cp39-cp39-win_amd64.whl (904 kB)
+     -------------------------------------- 904.2/904.2 kB 2.0 MB/s eta 0:00:00
+Installing collected packages: protobuf, mysql-connector-python
+Successfully installed mysql-connector-python-8.0.32 protobuf-3.20.3
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="koneksi-mysql-local">
+<h1>Koneksi mysql local<a class="headerlink" href="#koneksi-mysql-local" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mysql.connector</span>
+
+<span class="n">mydb</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+  <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+  <span class="n">user</span><span class="o">=</span><span class="s2">&quot;root&quot;</span><span class="p">,</span>
+  <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="n">database</span><span class="o">=</span><span class="s2">&quot;prosain200411100007&quot;</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">mydb</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT PetalLengthCm FROM iris&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Decimal(&#39;0.00&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.70&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.10&#39;),)
+(Decimal(&#39;1.20&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.70&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.70&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.00&#39;),)
+(Decimal(&#39;1.70&#39;),)
+(Decimal(&#39;1.90&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.20&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.30&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.90&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.60&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;1.50&#39;),)
+(Decimal(&#39;1.40&#39;),)
+(Decimal(&#39;4.70&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;4.90&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;4.60&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;4.70&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;4.60&#39;),)
+(Decimal(&#39;3.90&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;4.20&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;4.70&#39;),)
+(Decimal(&#39;3.60&#39;),)
+(Decimal(&#39;4.40&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;4.10&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;3.90&#39;),)
+(Decimal(&#39;4.80&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;4.90&#39;),)
+(Decimal(&#39;4.70&#39;),)
+(Decimal(&#39;4.30&#39;),)
+(Decimal(&#39;4.40&#39;),)
+(Decimal(&#39;4.80&#39;),)
+(Decimal(&#39;5.00&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;3.50&#39;),)
+(Decimal(&#39;3.80&#39;),)
+(Decimal(&#39;3.70&#39;),)
+(Decimal(&#39;3.90&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;4.70&#39;),)
+(Decimal(&#39;4.40&#39;),)
+(Decimal(&#39;4.10&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;4.40&#39;),)
+(Decimal(&#39;4.60&#39;),)
+(Decimal(&#39;4.00&#39;),)
+(Decimal(&#39;3.30&#39;),)
+(Decimal(&#39;4.20&#39;),)
+(Decimal(&#39;4.20&#39;),)
+(Decimal(&#39;4.20&#39;),)
+(Decimal(&#39;4.30&#39;),)
+(Decimal(&#39;3.00&#39;),)
+(Decimal(&#39;4.10&#39;),)
+(Decimal(&#39;6.00&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.90&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;5.80&#39;),)
+(Decimal(&#39;6.60&#39;),)
+(Decimal(&#39;4.50&#39;),)
+(Decimal(&#39;6.30&#39;),)
+(Decimal(&#39;5.80&#39;),)
+(Decimal(&#39;6.10&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.30&#39;),)
+(Decimal(&#39;5.50&#39;),)
+(Decimal(&#39;5.00&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.30&#39;),)
+(Decimal(&#39;5.50&#39;),)
+(Decimal(&#39;6.70&#39;),)
+(Decimal(&#39;6.90&#39;),)
+(Decimal(&#39;5.00&#39;),)
+(Decimal(&#39;5.70&#39;),)
+(Decimal(&#39;4.90&#39;),)
+(Decimal(&#39;6.70&#39;),)
+(Decimal(&#39;4.90&#39;),)
+(Decimal(&#39;5.70&#39;),)
+(Decimal(&#39;6.00&#39;),)
+(Decimal(&#39;4.80&#39;),)
+(Decimal(&#39;4.90&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;5.80&#39;),)
+(Decimal(&#39;6.10&#39;),)
+(Decimal(&#39;6.40&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;6.10&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;5.50&#39;),)
+(Decimal(&#39;4.80&#39;),)
+(Decimal(&#39;5.40&#39;),)
+(Decimal(&#39;5.60&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.10&#39;),)
+(Decimal(&#39;5.90&#39;),)
+(Decimal(&#39;5.70&#39;),)
+(Decimal(&#39;5.20&#39;),)
+(Decimal(&#39;5.00&#39;),)
+(Decimal(&#39;5.20&#39;),)
+(Decimal(&#39;5.40&#39;),)
+(Decimal(&#39;5.10&#39;),)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="koneksi-microsoft-sql-server-local">
+<h1>Koneksi Microsoft SQL Server local<a class="headerlink" href="#koneksi-microsoft-sql-server-local" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span> 
+<span class="n">cnxn_str</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;DRIVER={SQL Server};&quot;</span>
+            <span class="s2">&quot;Server=LAPTOP-V2CNBSQ5;&quot;</span>
+            <span class="s2">&quot;Database=prosain200411100007;&quot;</span>
+            <span class="s2">&quot;Trusted_Connection=yes;&quot;</span><span class="p">)</span>
+<span class="n">cnxn</span> <span class="o">=</span> <span class="n">pyodbc</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">cnxn_str</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">cnxn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT  PetalWidthCm, Species FROM iris&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Decimal(&#39;0.00&#39;), &#39;Species&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.50&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.10&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.60&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.40&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.30&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;0.20&#39;), &#39;Iris-setosa&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.60&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.10&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.20&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.70&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.10&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.20&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.60&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.60&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.20&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.20&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.00&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.20&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.10&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;1.30&#39;), &#39;Iris-versicolor&#39;)
+(Decimal(&#39;2.50&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.90&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.20&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.70&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.50&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.90&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.40&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.20&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.60&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.90&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.20&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.50&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.40&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.40&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.10&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.40&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.90&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.50&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.90&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.00&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;2.30&#39;), &#39;Iris-virginica&#39;)
+(Decimal(&#39;1.80&#39;), &#39;Iris-virginica&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sqlalchemy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: sqlalchemy in d:\anaconda3\lib\site-packages (1.4.39)Note: you may need to restart the kernel to use updated packages.
+
+Requirement already satisfied: greenlet!=0.4.17 in d:\anaconda3\lib\site-packages (from sqlalchemy) (1.1.1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">engine_elephantsql</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql+psycopg2://htaeovkk:dBR1FBnoLd495wPx260Q_8xQNYXHMZif@floppy.db.elephantsql.com/htaeovkk&#39;</span><span class="p">)</span>
+<span class="n">engine_postgresql</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;postgresql+psycopg2://postgres:2020@localhost:5432/prosain200411100007&#39;</span><span class="p">)</span>
+<span class="n">engine_mysql</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;mysql+mysqlconnector://root@localhost/prosain200411100007&#39;</span><span class="p">)</span>
+<span class="n">engine_sql_server</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s1">&#39;mssql+pyodbc://localhost/prosain200411100007?driver=SQL+Server+Native+Client+11.07&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tabel-a">
+<h1>Tabel A<a class="headerlink" href="#tabel-a" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_elephantsql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">MetaData</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine_elephantsql</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">sepallengthcm</span><span class="p">])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepallengthcm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>5.10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>4.90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>4.70</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>4.60</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="tabel-b">
+<h1>Tabel B<a class="headerlink" href="#tabel-b" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_elephantsql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">MetaData</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine_elephantsql</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">sepalwidthcm</span><span class="p">])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sepalwidthcm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>3.50</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>3.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>3.10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="tabel-c">
+<h1>Tabel C<a class="headerlink" href="#tabel-c" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_mysql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">MetaData</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine_mysql</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">PetalLengthCm</span><span class="p">])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>PetalLengthCm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1.40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.40</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1.30</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1.50</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="tabel-d">
+<h1>Tabel D<a class="headerlink" href="#tabel-d" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connection</span> <span class="o">=</span> <span class="n">engine_mysql</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">MetaData</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine_mysql</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">PetalWidthCm</span><span class="p">,</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">Species</span><span class="p">])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>PetalWidthCm</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.00</td>
+      <td>Species</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0.20</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>0.20</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>0.20</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.20</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pandoc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandoc
+  Downloading pandoc-2.3.tar.gz (33 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;done&#39;
+Collecting plumbum
+  Downloading plumbum-1.8.1-py3-none-any.whl (126 kB)
+     -------------------------------------- 126.7/126.7 kB 1.1 MB/s eta 0:00:00
+Collecting ply
+  Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+     ---------------------------------------- 49.6/49.6 kB 2.6 MB/s eta 0:00:00
+Requirement already satisfied: pywin32 in d:\anaconda3\lib\site-packages (from plumbum-&gt;pandoc) (302)
+Building wheels for collected packages: pandoc
+  Building wheel for pandoc (setup.py): started
+  Building wheel for pandoc (setup.py): finished with status &#39;done&#39;
+  Created wheel for pandoc: filename=pandoc-2.3-py3-none-any.whl size=33263 sha256=53519d2f43883c433c4408dd8fa737825ac0b4c06da80656209c92cc5e38345c
+  Stored in directory: c:\users\admin\appdata\local\pip\cache\wheels\69\e6\a1\1daa96d919c9e09a71473649b717b8da286f3f8d7719d1cfc5
+Successfully built pandoc
+Installing collected packages: ply, plumbum, pandoc
+Successfully installed pandoc-2.3 plumbum-1.8.1 ply-3.11
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scrapping_pta.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UTS_PSD.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Text Processing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Inisialisasi postgresql elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-elephantsql">Koneksi postgresql elephantsql</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-postgresql-local">Koneksi postgresql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-mysql-local">Koneksi mysql local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-microsoft-sql-server-local">Koneksi Microsoft SQL Server local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-a">Tabel A</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-b">Tabel B</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-c">Tabel C</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-d">Tabel D</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Isnain Fauziah
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
